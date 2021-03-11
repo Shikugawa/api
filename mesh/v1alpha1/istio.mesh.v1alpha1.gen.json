@@ -959,6 +959,16 @@
                       "$ref": "#/components/schemas/istio.mesh.v1alpha1.Tracing.OpenCensusAgent"
                     }
                   }
+                },
+                {
+                  "required": [
+                    "skywalking"
+                  ],
+                  "properties": {
+                    "skywalking": {
+                      "$ref": "#/components/schemas/istio.mesh.v1alpha1.Tracing.SkyWalking"
+                    }
+                  }
                 }
               ]
             }
@@ -1010,6 +1020,16 @@
             "properties": {
               "openCensusAgent": {
                 "$ref": "#/components/schemas/istio.mesh.v1alpha1.Tracing.OpenCensusAgent"
+              }
+            }
+          },
+          {
+            "required": [
+              "skywalking"
+            ],
+            "properties": {
+              "skywalking": {
+                "$ref": "#/components/schemas/istio.mesh.v1alpha1.Tracing.SkyWalking"
               }
             }
           }
@@ -1120,6 +1140,22 @@
         "properties": {
           "address": {
             "description": "Address of the Datadog Agent.",
+            "type": "string",
+            "format": "string"
+          }
+        }
+      },
+      "istio.mesh.v1alpha1.Tracing.SkyWalking": {
+        "description": "Configurations for Apache SkyWalking tracer.",
+        "type": "object",
+        "properties": {
+          "address": {
+            "description": "Address of the SkyWalking OAP.",
+            "type": "string",
+            "format": "string"
+          },
+          "accessToken": {
+            "description": "Access token of SkyWalking OAP.",
             "type": "string",
             "format": "string"
           }

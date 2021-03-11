@@ -5,7 +5,7 @@ location: https://istio.io/docs/reference/config/istio.mesh.v1alpha1.html
 layout: protoc-gen-docs
 generator: protoc-gen-docs
 weight: 20
-number_of_entries: 34
+number_of_entries: 35
 ---
 <p>Configuration affecting the service mesh as a whole.</p>
 
@@ -1321,6 +1321,17 @@ No
 No
 </td>
 </tr>
+<tr id="Tracing-skywalking" class="oneof">
+<td><code>skywalking</code></td>
+<td><code><a href="#Tracing-SkyWalking">SkyWalking (oneof)</a></code></td>
+<td>
+<p>Use an Apache SkyWalking tracer.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
 <tr id="Tracing-sampling">
 <td><code>sampling</code></td>
 <td><code>double</code></td>
@@ -1929,6 +1940,45 @@ No
 <td><code>string</code></td>
 <td>
 <p>Address of the Datadog Agent.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="Tracing-SkyWalking">Tracing.SkyWalking</h2>
+<section>
+<p>Configurations for Apache SkyWalking tracer.</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="Tracing-SkyWalking-address">
+<td><code>address</code></td>
+<td><code>string</code></td>
+<td>
+<p>Address of the SkyWalking OAP.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="Tracing-SkyWalking-access_token">
+<td><code>accessToken</code></td>
+<td><code>string</code></td>
+<td>
+<p>Access token of SkyWalking OAP.</p>
 
 </td>
 <td>

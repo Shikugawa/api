@@ -62,6 +62,15 @@ message Tracing {
     string address = 1;
   }
 
+  // Configurations for Apache SkyWalking tracer.
+  message SkyWalking {
+    // Address of the SkyWalking OAP.
+    string address = 1;
+
+    // Access token of SkyWalking OAP.
+    string access_token = 2;
+  }
+
   // Stackdriver defines configuration for a Stackdriver tracer.
   // See [Envoy's OpenCensus trace configuration](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/trace/v3/opencensus.proto)
   // and
@@ -139,6 +148,8 @@ message Tracing {
     Stackdriver stackdriver = 4;
     // Use an OpenCensus tracer exporting to an OpenCensus agent.
     OpenCensusAgent open_census_agent = 9;
+    // Use an Apache SkyWalking tracer.
+    SkyWalking skywalking = 10;
   }
 
   // Configure custom tags that will be added to any active span.
